@@ -92,7 +92,7 @@ namespace WebAPITesting
 
             File3Class fileInfo = new File3Class()
             {
-                path = "/webAPITestingTRPZ2021/HelloWorld.txt",
+                path = "/webAPITestingTRPZ2021/ToBeDeleted.txt",
             };
 
             string stringjson = JsonConvert.SerializeObject(fileInfo);
