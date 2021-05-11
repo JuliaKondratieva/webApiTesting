@@ -51,7 +51,7 @@ namespace WebAPITesting
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
         }
 
-       
+
 
         [Test]
         public void GetFileMetadataTest()
@@ -94,7 +94,7 @@ namespace WebAPITesting
 
             File3Class fileInfo = new File3Class()
             {
-                path = "/webAPITestingTRPZ2021/ToBeDeleted.txt",
+                path = "/webAPITestingTRPZ2021/ToDelete.txt",
             };
 
             string stringjson = JsonConvert.SerializeObject(fileInfo);
