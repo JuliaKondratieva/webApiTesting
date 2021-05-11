@@ -51,6 +51,8 @@ namespace WebAPITesting
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
         }
 
+       
+
         [Test]
         public void GetFileMetadataTest()
         {
@@ -61,7 +63,7 @@ namespace WebAPITesting
 
             File2Class fileInfo = new File2Class()
             {
-                path = "/webAPITestingTRPZ2021/HelloWorld.txt",
+                path = "/webAPITestingTRPZ2021/ToGet.txt",
                 include_media_info= false,
                 include_deleted = false,
                 include_has_explicit_shared_members= false
