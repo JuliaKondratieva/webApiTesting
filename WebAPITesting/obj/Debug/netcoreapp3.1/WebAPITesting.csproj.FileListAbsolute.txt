@@ -97,3 +97,4 @@ D:\3\trpz\WebAPITesting\WebAPITesting\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.
 D:\3\trpz\WebAPITesting\WebAPITesting\obj\Debug\netcoreapp3.1\WebAPITesting.csproj.CoreCompileInputs.cache
 D:\3\trpz\WebAPITesting\WebAPITesting\obj\Debug\netcoreapp3.1\WebAPITesting.csproj.CopyComplete
 D:\3\trpz\WebAPITesting\WebAPITesting\obj\Debug\netcoreapp3.1\WebAPITesting.genruntimeconfig.cache
+D:\3\trpz\WebAPITesting\WebAPITesting\bin\Debug\netcoreapp3.1\WebAPITesting.exe

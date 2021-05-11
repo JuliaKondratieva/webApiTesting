@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using RestSharp;
 using System;
+using System.Collections;
 using System.IO;
 using System.Net;
 
@@ -9,12 +10,11 @@ namespace WebAPITesting
 {
     public class TestClass
     {
-        string token = System.Environment.GetEnvironmentVariable("TOKEN");
+        public string token = Environment.GetEnvironmentVariable("TOKEN");
 
         [Test]
         public void UploadEndpointTest()
         {
-
             //
             RestClient client = new RestClient("https://content.dropboxapi.com/2/");
             IRestRequest request = new RestRequest("files/upload", Method.POST);

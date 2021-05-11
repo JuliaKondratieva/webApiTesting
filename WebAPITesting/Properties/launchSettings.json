@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "WebAPITesting": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "TOKEN": "sl.AwlAQC297MT03ttxTs9Gcz_jEPlckPHpY1siUrlXuvbXgs52hzTukLN4QmC9BZJMvB0Ctj7OhwxFf0gzLA-GlL8xdVtqrTiYuzQibFsquGorBWl2-Cdx1zyqA5L6ijdHNOwT6JQ",
+        "Key": "Value"
+      }
+    }
+  }
+}
