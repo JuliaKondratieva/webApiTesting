@@ -87,29 +87,60 @@ namespace WebAPITesting
         [Test]
         public void DeleteTest()
         {
-            RestClient client = new RestClient("https://api.dropboxapi.com/2/");
-            IRestRequest request = new RestRequest("files/delete_v2", Method.POST);
+            RestClient client = new RestClient("https://content.dropboxapi.com/2/");
+            IRestRequest request = new RestRequest("files/upload", Method.POST);
 
-            request.AddHeader("Authorization", "Bearer "+token);
+            //FileInfo fileInfo = new FileInfo(filePath);
+            //long fileLength = fileInfo.Length;
 
-            File3Class fileInfo = new File3Class()
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            FileClass fileInfo = new FileClass()
+            {
+                path = "/webAPITestingTRPZ2021/ToDelete.txt",
+                mode = "add",
+                autorename = true,
+                mute = false,
+                strict_conflict = false
+            };
+
+            string stringjson = JsonConvert.SerializeObject(fileInfo);
+            //Console.WriteLine(stringjson);
+            request.AddHeader("Dropbox-API-Arg", stringjson);
+            request.AddHeader("Content-Type", "application/octet-stream");
+            request.AddJsonBody("{}");
+
+            IRestResponse response = client.Execute(request);
+            //
+
+            // act
+            //IRestResponse response = client.Execute(request);
+
+            RestClient client2 = new RestClient("https://api.dropboxapi.com/2/");
+            IRestRequest request2 = new RestRequest("files/delete_v2", Method.POST);
+
+            request2.AddHeader("Authorization", "Bearer "+token);
+
+            File3Class fileInfo2 = new File3Class()
             {
                 path = "/webAPITestingTRPZ2021/ToDelete.txt",
             };
 
-            string stringjson = JsonConvert.SerializeObject(fileInfo);
-            request.AddHeader("Content-Type", "application/json");
+            string stringjson2 = JsonConvert.SerializeObject(fileInfo2);
+            request2.AddHeader("Content-Type", "application/json");
             //byte[] data = File.ReadAllBytes(filePath);
             //request.AddJsonBody(stringjson);
-            request.AddParameter("application/json", stringjson, ParameterType.RequestBody);
+            request2.AddParameter("application/json", stringjson2, ParameterType.RequestBody);
             //request.AddParameter("application/json", stringjson);
 
 
-            IRestResponse response = client.Execute(request);
+            IRestResponse response2 = client2.Execute(request2);
 
             Console.WriteLine("CODE: ", response.StatusCode);
             Console.WriteLine("Content: ", response.Content);
-            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+            Assert.That(response2.StatusCode, Is.EqualTo(HttpStatusCode.OK));
         }
+
+
     }
 }
